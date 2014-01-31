@@ -1,5 +1,7 @@
 HelpingHand::Application.routes.draw do
+  get "users/new"
   root 'people#index'
+  match '/signup', to: 'users#new', via: 'get'
   # get "people/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
