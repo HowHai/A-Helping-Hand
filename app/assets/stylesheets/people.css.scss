@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 .center {
@@ -64,10 +64,12 @@ p {
 // Profiles
 
 .profile {
+  background: rgba(204,204,204, 0.5);
+  // opacity: 0.4;
   margin: 30px 5px;
   width: 10em;
   height: 10em;
-  border: 1px solid black;
+  border: 1px dotted black;
   -webkit-border-radius: 5em;
   -moz-border-radius: 5em;
   text-align: center;
