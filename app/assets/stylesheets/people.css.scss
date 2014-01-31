@@ -1,3 +1,80 @@
 // Place all the styles related to the people controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+
+// mixins, variables, etc.
+
+$grayMediumLight: #eaeaea;
+
+// universal
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+  }
+}
+
+// typography
+
+
+h1 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $grayLight;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+// header
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+// Profiles
+
+.profile {
+  margin: 30px 5px;
+  width: 10em;
+  height: 10em;
+  border: 1px solid black;
+  -webkit-border-radius: 5em;
+  -moz-border-radius: 5em;
+  text-align: center;
+  display: inline-block;
+
+  p {
+    text-align: center;
+    margin: 70px auto;
+  }
+}
