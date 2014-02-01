@@ -1,0 +1,17 @@
+<!-- placeholder -->
+<div class="center hero-unit">
+  <h1>All users</h1>
+
+
+  <% @users.each do |user| %>
+    <div>
+      Name: <%= user.name %><br />
+    </div>
+    <div>
+      <%= link_to 'show', user_path(user) %>
+      <%= link_to 'edit', edit_user_path(user) %>
+      <%= link_to 'delete', user, method: :delete %>
+    </div>
+    <br />
+  <% end %>
+</div>
