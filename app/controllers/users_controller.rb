@@ -24,8 +24,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(users_params)
     if @user.save
-      redirect_to action: 'index'
-      flash[:notice] = "Account created!"
+      redirect_to @user
+      flash[:success] = "Account created!"
     else
       render 'new'
     end
