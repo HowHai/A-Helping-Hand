@@ -11,6 +11,9 @@ class User
   field :hashed_password, type: String
   field :salt,            type: String
 
+  # Relation to Person model
+  has_many :people
+
   # hartl
   # field :password_digest, type: String
   # has_secure_password adds :password and :password_confirmation field
@@ -21,14 +24,14 @@ class User
   before_save { self.email = email.downcase }
   before_save :hash_password
 
+  # validations
   validates :name, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false}
   validates :password, length: { minimum: 6 }
-  # presence validations for :password and :password_confirmation added by
-  # has_secure_password
 
+  # sign in
   def authenicated?(pwd)
     self.hashed_password == BCrypt::Engine.hash_secret(pwd, salt)
   end
@@ -39,5 +42,4 @@ class User
       self.hashed_password = BCrypt::Engine.hash_secret(password, salt)
       @password, @password_confirmation = nil
     end
-
 end

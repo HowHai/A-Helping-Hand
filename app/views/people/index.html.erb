@@ -2,11 +2,16 @@
   <h1>Give A Helping Hand</h1>
   <!-- <p>Help those who cannot help themselves. It will only cost you 5 minutes.</p> -->
 
-  <%= link_to "Sign up now!", new_user_path, class: "btn btn-large btn-primary" %>
+  <%= link_to "Sign up now!", new_user_path, class: "btn btn-large btn-primary" %> <br>
   <%= link_to "view all users", users_path %>
 </div>
 
 <div class="center hero-unit">
+  <!-- Move this laster -->
+  <!-- Add a person to application -->
+  <%= link_to 'Help a person', new_person_path %>
+
+
   <!-- search box here -->
   <form class="navbar-form navbar-left">
     <div class="form-group">

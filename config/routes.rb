@@ -1,5 +1,6 @@
 HelpingHand::Application.routes.draw do
   resources :users
+  resources :people, only: [:new]
   root 'people#index'
   # match '/signup', to: 'users#new', via: 'get'
   # get "people/index"
