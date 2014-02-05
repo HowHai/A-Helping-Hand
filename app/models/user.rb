@@ -1,11 +1,11 @@
 require 'bcrypt'
 class User
+  include Mongoid::Document
   # hartl
   # include ActiveModel::SecurePassword
 
-  attr_accessor :password, :password_confirmation
+  attr_accessor :password
 
-  include Mongoid::Document
   field :name,            type: String
   field :email,           type: String
   field :hashed_password, type: String
@@ -21,8 +21,7 @@ class User
 
   # hartl
   # has_secure_password
-  before_save { self.email = email.downcase }
-  before_save :hash_password
+  # before_save { self.email = email.downcase }
 
   # validations
   validates :name, presence: true
@@ -31,15 +30,16 @@ class User
                     uniqueness: { case_sensitive: false}
   validates :password, length: { minimum: 6 }
 
-  # sign in
-  def authenicated?(pwd)
-    self.hashed_password == BCrypt::Engine.hash_secret(pwd, salt)
+  def authenticated?(pwd)
+    self.hashed_password == BCrypt::Engine.hash_secret(pwd, self.salt)
   end
+
+  before_save :hash_password
 
   private
     def hash_password
       self.salt = BCrypt::Engine.generate_salt
-      self.hashed_password = BCrypt::Engine.hash_secret(password, salt)
-      @password, @password_confirmation = nil
+      self.hashed_password = BCrypt::Engine.hash_secret(self.password, self.salt)
+      self.password = nil
     end
 end

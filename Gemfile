@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bootstrap-sass', '3.1.0'
-gem 'bcrypt-ruby', '3.1.2'
+# gem 'bcrypt-ruby', '3.1.2'
+gem 'bcrypt-ruby', github: 'codahale/bcrypt-ruby'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

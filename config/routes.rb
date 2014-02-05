@@ -1,7 +1,11 @@
 HelpingHand::Application.routes.draw do
+
   resources :users
   resources :people, only: [:new]
+  resources :auths, only: [:new, :create]
   root 'people#index'
+
+  delete "auths" => "auths#destroy"
   # match '/signup', to: 'users#new', via: 'get'
   # get "people/index"
   # The priority is based upon order of creation: first created -> highest priority.
