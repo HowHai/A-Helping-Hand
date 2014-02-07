@@ -1,0 +1,6 @@
+// Redirect user to homepage
+$("#new_user").bind("ajax:success", function() {
+  var url = "http://localhost:3000"
+  $(location).attr('href', url);
+});
+

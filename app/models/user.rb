@@ -1,8 +1,6 @@
 require 'bcrypt'
 class User
   include Mongoid::Document
-  # hartl
-  # include ActiveModel::SecurePassword
 
   attr_accessor :password
 
@@ -14,13 +12,6 @@ class User
   # Relation to Person model
   has_many :people
 
-  # hartl
-  # field :password_digest, type: String
-  # has_secure_password adds :password and :password_confirmation field
-
-
-  # hartl
-  # has_secure_password
   # before_save { self.email = email.downcase }
 
   # validations

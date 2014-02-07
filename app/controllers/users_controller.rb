@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :destroy]
+
   def index
     @users = User.all
+    # Delete this after test
+    @user = User.new
   end
 
   def new
@@ -8,26 +12,39 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
-    redirect_to action: 'index'
+
+    # Quick fix, get rid of it later... maybe?
+    session[:user_id] = nil if @user.destroy
+
+    respond_to do |format|
+      format.html { redirect_to action: 'index'}
+      format.js { render nothing: true }
+    end
   end
 
   def create
     @user = User.new(users_params)
-    if @user.save
-      redirect_to @user
-      flash[:success] = "Account created!"
-    else
-      render 'new'
+
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to @user}
+        format.js {
+          flash[:success] = "Welcome to Helping Hand, #{@user.name}!"
+          session[:user_id] = @user.id
+                  }
+        format.json { render json: @user, status: :created, location: @user}
+      else
+        format.html { render action: 'new' }
+        format.js { flash[:error] = "Boooooooo" }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
     end
   end
 

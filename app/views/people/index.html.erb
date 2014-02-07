@@ -1,19 +1,26 @@
 <div class="center hero-unit">
+
   <h1>Give A Helping Hand</h1>
+
+  <h2><%= "You are logged in" if current_user %></h2>
   <!-- <p>Help those who cannot help themselves. It will only cost you 5 minutes.</p> -->
 
-  <%= link_to "Sign up now!", new_user_path, class: "btn btn-large btn-primary" %> <br>
-  <%= link_to "view all users", users_path %>
+  <% if current_user %>
+    <%= link_to "Log out", auths_path, method: :delete %> <br>
+  <% else %>
+    <button class="btn btn-large btn-primary" id="click-button">Sign up now!</button> <br>
+    <%= render partial: 'modal' %>
+    <%= link_to "sign in", new_auth_path %> <br>
+  <% end %>
 
-  <!-- Destroy user... placeholder... get rid later -->
-  <br>
-  <%= link_to "Log out", auths_path, method: :delete %>
+   <%= link_to "view all users", users_path %>
+
 </div>
 
 <div class="center hero-unit">
   <!-- Move this laster -->
   <!-- Add a person to application -->
-  <%= link_to 'Help a person', new_person_path %>
+    <%= link_to 'Help a person', new_person_path %>
 
 
   <!-- search box here -->
@@ -41,4 +48,10 @@
   <div class="profile"><p>Profile 3</p></div>
   <div class="profile"><p>Profile 4</p></div>
 </div>
+
+<script>
+  $("#click-button").click(function() {
+    $(".modal").modal('toggle');
+  });
+</script>
 

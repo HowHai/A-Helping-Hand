@@ -1,17 +1,45 @@
+<ul id="users">
+  <% @users.each do |user| %>
+    <li><%= user.name %></li>
+  <% end %>
+</ul>
+
+    <%= form_for(@user, remote: true) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      <br />
+      <%= f.submit "Create my account", class: "btn btn-large btn-primary", id: "newForm" %>
+    <% end %>
+
+<!-- Delete everything above after test -->
+
 <!-- placeholder -->
 <div class="center hero-unit">
   <h1>All users</h1>
 
 
-  <% @users.each do |user| %>
-    <div>
+<% @users.each do |user| %>
+
+    <div class="user_display">
       Name: <%= user.name %><br />
-    </div>
-    <div>
       <%= link_to 'show', user_path(user) %>
       <%= link_to 'edit', edit_user_path(user) %>
-      <%= link_to 'delete', user, method: :delete %>
+      <%= link_to 'delete', user, method: :delete, remote: true, class: "delete_user" %>
     </div>
     <br />
   <% end %>
 </div>
+
+<script>
+
+  $(".delete_user").bind("ajax:success", function() {
+    $(this).closest('div').fadeOut();
+  });
+</script>
