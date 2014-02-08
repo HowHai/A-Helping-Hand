@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
 <div class="row" id="sign-up-form">
   <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
@@ -18,3 +18,99 @@
   </div>
 </div>
 
+
+ -->
+<style>
+
+  #awesome-form {
+    height: 405px;
+    width: 280px;
+    border: 1px solid black;
+    margin: 250px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  }
+
+  .awesome-inner-form {
+    background-color: #505050;
+    width: 100%;
+    height: 60%;
+    margin-top: 5%;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .awesome-bottom-form {
+    background-color: #404040;
+    height: 40px;
+    width: 100%;
+    color: #cccccc;
+    text-align: center;
+    padding-top: 7px;
+  }
+
+  img {
+    height: 100px;
+    width: 140px;
+    margin-left: 28%;
+    margin-top: 3%;
+  }
+
+  input[type="password"], input[type="text"] {
+    background: #404040;
+    color: #cccccc;
+    width: 80%;
+    height: 43px;
+    border: none;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0;
+  }
+
+  #newClicker {
+    background-color: #ff8627;
+    color: white;
+    border: none;
+    border-radius: 0;
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  span {
+    width: 23px;
+    height: 23px;
+    background-color: #505050;
+    border-radius: 23px;
+  }
+
+  .glyphicon {
+    padding: 3px;
+  }
+</style>
+
+<div id="awesome-form">
+  <%= image_tag("form-image.png") %>
+  <div class="awesome-inner-form">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.text_field :name, placeholder: "Name" %>
+
+      <%= f.password_field :password, placeholder: "Password" %>
+
+      <%= f.text_field :email, placeholder: "Email" %>
+
+      <%= f.submit "Sign up", class: "btn btn-large btn-primary", id: "newClicker" %>
+    <% end %>
+  </div>
+  <div class="awesome-bottom-form">
+    <div class="row">
+      <div class="col-md-5">
+         <span class="glyphicon glyphicon-user"></span> Sign in
+        </div>
+      <div class="col-md-7"><span class="glyphicon glyphicon-lock"></span>Forgot password?</div>
+    </div>
+  </div>
+</div>
