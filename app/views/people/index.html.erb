@@ -1,13 +1,17 @@
 <div class="col-md-12" id="top-panel">
 
-  <h1>Give A Helping Hand</h1>
+  <div class="top-panel-content row">
+    <div class="col-md-6">
+      <h1>Helping the helpless Give a helping hand</h1>
+    </div>
 
-  <!-- Sign up form loaded here on click -->
-  <div id="form-stuff">
-    <% if !current_user %>
-      <button class="btn btn-large btn-primary" id="sign-up">Sign up now!</button> <br>
-      <%= link_to 'sign in', '#sign-in', id: '#sign-in' %>
-    <% end %>
+    <!-- Sign up form loaded here on click -->
+    <div class="col-md-6" id="form-stuff">
+      <% if !current_user %>
+        <button class="btn btn-large btn-primary" id="sign-up">Sign up now!</button> <br>
+        <%= link_to 'sign in', '#sign-in', id: '#sign-in' %>
+      <% end %>
+    </div>
   </div>
 </div>
 
