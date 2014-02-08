@@ -52,8 +52,9 @@
   img {
     height: 100px;
     width: 140px;
-    margin-left: 28%;
+    margin-left: 25%;
     margin-top: 3%;
+    opacity: 0.7;
   }
 
   input[type="password"], input[type="text"] {
@@ -91,7 +92,7 @@
 </style>
 
 <div id="awesome-form">
-  <%= image_tag("form-image.png") %>
+  <%= image_tag("form-image2.jpg") %>
   <div class="awesome-inner-form">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
@@ -110,7 +111,7 @@
       <div class="col-md-5">
          <span class="glyphicon glyphicon-user"></span> Sign in
         </div>
-      <div class="col-md-7"><span class="glyphicon glyphicon-lock"></span>Forgot password?</div>
+      <div class="col-md-7"><span class="glyphicon glyphicon-lock"></span> Forgot password?</div>
     </div>
   </div>
 </div>
