@@ -15,7 +15,9 @@ html {
 }
 
 body {
+  width: 100%;
   padding-top: 50px;
+  margin: 0 auto;
 }
 
 .center {
@@ -26,6 +28,9 @@ body {
   }
 }
 
+#sign-in-form {
+  border: 2px solid black;
+}
 // typography
 
 
@@ -35,7 +40,7 @@ h1 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: gray;
 }
 
 p {
@@ -67,16 +72,41 @@ p {
   background: rgba(204,204,204, 0.5);
   // opacity: 0.4;
   margin: 30px 5px;
-  width: 10em;
-  height: 10em;
+  width: 12em;
+  height: 12em;
   border: 1px dotted black;
   -webkit-border-radius: 5em;
   -moz-border-radius: 5em;
   text-align: center;
-  display: inline-block;
 
   p {
     text-align: center;
     margin: 70px auto;
+  }
+}
+
+#top-panel {
+  background-color: #e1ebf7;
+  border: 3px double darken(#e1ebf7, 50%);
+  margin-bottom: 15px;
+  #form-stuff {
+    width: 10%;
+    margin: 0 auto;
+    a {
+      margin-left: 30px;
+    }
+  }
+}
+
+#profiles-panel {
+  width: 100%;
+  background-color: #e9f0f8;
+  border: 3px double darken(#e9f0f8, 50%);
+  #profiles {
+    text-align: center;
+    margin: 0 auto;
+  }
+  form {
+    text-align: center;
   }
 }

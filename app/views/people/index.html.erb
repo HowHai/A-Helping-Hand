@@ -1,25 +1,23 @@
-<div class="center hero-unit">
+<div class="col-md-12" id="top-panel">
 
   <h1>Give A Helping Hand</h1>
 
   <!-- Sign up form loaded here on click -->
-  <div id="form-stuff"></div>
-
-  <% if current_user %>
-    <%= link_to "Log out", auths_path, method: :delete %> <br>
-  <% else %>
-    <button class="btn btn-large btn-primary" id="click-button">Sign up now!</button> <br>
-  <% end %>
+  <div id="form-stuff">
+    <% if !current_user %>
+      <button class="btn btn-large btn-primary" id="sign-up">Sign up now!</button> <br>
+      <%= link_to 'sign in', '#sign-in', id: '#sign-in' %>
+    <% end %>
+  </div>
 </div>
 
-<div class="center hero-unit">
-  <!-- Move this laster -->
+<div class="col-md-12 col-lg-12 col-sm-12" id="profiles-panel">
   <!-- Add a person to application -->
-    <%= link_to 'Help a person', new_person_path %>
+    <!-- <%= link_to 'Help a person', new_person_path %> -->
 
 
   <!-- search box here -->
-  <form class="navbar-form navbar-left">
+  <form class="navbar-form">
     <div class="form-group">
       <input type="text" class="form-control" placeholder="search">
     </div>
@@ -28,24 +26,27 @@
 
   <!-- Profiles -->
   <!--  -->
-  <div class="profile"><p>Profile 1</p></div>
-  <div class="profile"><p>Profile 2</p></div>
-  <div class="profile"><p>Profile 3</p></div>
-  <div class="profile"><p>Profile 4</p></div>
+  <div class="row col-md-12" id="profiles">
+    <div class="col-sm-2 col-md-2 col-lg-2"></div>
+    <div class="profile col-md-2 col-sm-2 col-lg-2"><p>Profile 1</p></div>
+    <div class="profile col-md-2 col-sm-2 col-lg-2"><p>Profile 1</p></div>
+    <div class="profile col-md-2 col-sm-2 col-lg-2"><p>Profile 1</p></div>
+    <div class="profile col-md-2 col-sm-2 col-lg-2"><p>Profile 1</p></div>
+    <div class="col-sm-2 col-md-2 col-lg-2"></div>
+  </div>
 
-  <div class="profile"><p>Profile 1</p></div>
-  <div class="profile"><p>Profile 2</p></div>
-  <div class="profile"><p>Profile 3</p></div>
-  <div class="profile"><p>Profile 4</p></div>
-
-  <div class="profile"><p>Profile 1</p></div>
-  <div class="profile"><p>Profile 2</p></div>
-  <div class="profile"><p>Profile 3</p></div>
-  <div class="profile"><p>Profile 4</p></div>
+  <div class="row col-md-12" id="profiles">
+    <div class="col-sm-2 col-md-2 col-lg-2"></div>
+    <div class="profile col-md-2 col-sm-2 col-lg-2"><p>Profile 1</p></div>
+    <div class="profile col-md-2 col-sm-2 col-lg-2"><p>Profile 1</p></div>
+    <div class="profile col-md-2 col-sm-2 col-lg-2"><p>Profile 1</p></div>
+    <div class="profile col-md-2 col-sm-2 col-lg-2"><p>Profile 1</p></div>
+    <div class="col-sm-2 col-md-2 col-lg-2"></div>
+  </div>
 </div>
 
 <script>
-  $("#click-button").click(function() {
+  $("#sign-up").click(function() {
     // $.load("users/new #sign-up-form", function(data) {
       // $("#form-stuff").html(data);
     // });
