@@ -6,7 +6,7 @@ HelpingHand::Application.routes.draw do
   root 'people#index'
 
   # Delete after test
-  get "people/test.html" => "people#test"
+  get "test.html" => "people#test"
 
 
   delete "auths" => "auths#destroy"

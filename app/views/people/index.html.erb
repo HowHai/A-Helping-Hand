@@ -2,20 +2,14 @@
 
   <h1>Give A Helping Hand</h1>
 
-  <h2><%= "You are logged in" if current_user %></h2>
+  <!-- Sign up form loaded here on click -->
+  <div id="form-stuff"></div>
 
   <% if current_user %>
     <%= link_to "Log out", auths_path, method: :delete %> <br>
   <% else %>
     <button class="btn btn-large btn-primary" id="click-button">Sign up now!</button> <br>
-    <%= render partial: 'modal' %>
-    <%#= link_to "sign in", '#signin_modal', id: "sign_in" %> <br>
-    <%= link_to "sign in", "#signin-modal", "data-toggle" => "modal" %> <br>
-    <%= render partial: 'modal_signin' %>
   <% end %>
-
-   <%= link_to "view all users", users_path %>
-
 </div>
 
 <div class="center hero-unit">
@@ -52,11 +46,10 @@
 
 <script>
   $("#click-button").click(function() {
-    $("#login_modal").modal('toggle');
+    // $.load("users/new #sign-up-form", function(data) {
+      // $("#form-stuff").html(data);
+    // });
+  $("#form-stuff").load("users/new #sign-up-form");
   });
-
-  // $("#sign_in").click(function() {
-  //   $("#signin-modal").modal('toggle');
-  // });
 </script>
 
