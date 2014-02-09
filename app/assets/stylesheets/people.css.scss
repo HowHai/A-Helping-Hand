@@ -95,10 +95,12 @@ p {
   }
 }
 
+// Profiles Panel
 
 #profiles-panel {
   width: 100%;
-  background-color: #e9f0f8;
+  // background-color: #e9f0f8;
+  background-color: white;
   #profiles {
     text-align: center;
     margin: 0 auto;
@@ -108,8 +110,12 @@ p {
   }
 }
 
+// Header
+
 .navbar, .navbar-inner {
-  background-color: darken(#363e45, 5%);
+  // background-color: darken(#363e45, 5%);
+  background-color: darken(#ff8627, 5%);
+  // background-color: linear-gradient(rgba(255,120,13,0.3), rgba(255,120,13,0.7));
   .nav {
     li a {
       color: white;
@@ -144,6 +150,8 @@ p {
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   background-color: white;
+  margin-top: 15px;
+  opacity: 0.9;
 
   .awesome-inner-form {
     background-color: #505050;
@@ -204,7 +212,39 @@ p {
   }
 }
 
+// Footer
 
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  background-color: darken(#ff8627, 5%);
+  border: 1px solid black;
+  width: 100%;
+  height: 100px;
+  clear: both;
+  color: white;
+  font-weight: bold;
+
+  a {
+    color: white;
+  }
+
+  small {
+    float: left;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+    color: blue;
+
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
 
 
 
