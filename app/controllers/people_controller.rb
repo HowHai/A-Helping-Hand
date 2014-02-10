@@ -11,7 +11,7 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.new(person_params)
-    if @person.save
+    if @person.save && @person.update(user_id: current_user.id)
       # Do some ajax stuff to "Add new person" tab?
       flash[:success] = "You have helped #{@person.name}"
       redirect_to root_path
