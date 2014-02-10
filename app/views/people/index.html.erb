@@ -53,8 +53,10 @@
     $("#form-stuff").load("users/new #awesome-form");
   });
 
-  $("#user-info-tab").click(function() {
+  // Switch to user's info tab on click
+  $("#user-info-tab").click(function(e) {
     $(".user-inner-tab-content").html("Hai");
+    e.preventDefault();
   })
 </script>
 
