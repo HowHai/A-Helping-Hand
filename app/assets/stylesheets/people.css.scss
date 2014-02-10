@@ -248,15 +248,30 @@ footer {
 
 
 
-  .person-profile {
-    width: 200px;
-    height: 200px;
-    border: 6px solid #328194;
-    margin: 100px;
-    border-radius: 200px;
-    background-color: #328194;
+.person-profile {
+  width: 200px;
+  height: 200px;
+  border: 6px solid #328194;
+  border-radius: 200px;
+  background-color: #328194;
+  margin: 25px;
 
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
-    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+
+  .profile-img {
+    border-radius: 50%;
   }
+
+  .person-name-tag {
+    border: 1px solid black;
+    text-align: center;
+    background-color: #ff8627;
+    color: white;
+    height: 30px;
+    margin-top: -5px;
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+}
