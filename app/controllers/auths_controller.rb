@@ -26,7 +26,6 @@ class AuthsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    flash[:success] = "Bye!"
     redirect_to root_path
   end
 end

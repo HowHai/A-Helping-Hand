@@ -9,16 +9,15 @@
     <div class="col-md-2"></div>
 
     <!-- Sign up form loaded here on click -->
-    <div class="col-md-4" id="form-stuff">
-      <% if !current_user %>
-<!--         <button class="btn btn-large btn-primary" id="sign-up">Sign up now!</button> <br>
-        <%= link_to 'sign in', '#sign-in', id: '#sign-in' %>
-  -->
-
-      <%= render partial: 'users/awesome_form' %>
-
+      <% if current_user %>
+        <div class="col-md-6" id="form-stuff">
+          <%= render partial: 'users/user_profile' %>
+        </div>
+      <% else %>
+        <div class="col-md-4" id="form-stuff">
+          <%= render partial: 'users/awesome_form' %>
+        </div>
       <% end %>
-    </div>
   </div>
 </div>
 
@@ -46,26 +45,16 @@
   </div>
 
  -->
-  <!-- <div class="row col-md-12"> -->
-    <div class="person-profile col-md-4 col-lg-3">
-      <%= image_tag("profile1.png", class: "profile-img") %>
-      <div class="person-name-tag">Hai Nguyen</div>
+   <!-- Generate people's profile using data -->
+  <% @people.each do |person| %>
+    <div class="person-profile col-md-4 col-lg-3 col-sm-6 col-xs-12">
+      <%= image_tag("homeless-dan.png", class: "profile-img") %>
+      <div class="person-name-tag">
+        <%= person.name %> <br>
+        <%= person.location + ", CA" %>
+      </div>
     </div>
-
-    <div class="person-profile col-md-4 col-lg-3">
-      <%= image_tag("profile1.png", class: "profile-img") %>
-      <div class="person-name-tag">Hai Nguyen</div>
-    </div>
-
-    <div class="person-profile col-md-4 col-lg-3">
-      <%= image_tag("profile1.png", class: "profile-img") %>
-      <div class="person-name-tag">Hai Nguyen</div>
-    </div>
-
-    <div class="person-profile col-md-4 col-lg-3">
-      <%= image_tag("profile1.png", class: "profile-img") %>
-      <div class="person-name-tag">Hai Nguyen</div>
-    </div>
+  <% end %>
 </div>
 
 <script>

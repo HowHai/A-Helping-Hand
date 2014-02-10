@@ -30,6 +30,6 @@ end
 
 
 
-25.times do
+12.times do
   Person.create(name: random_name, age: random_age, location: random_city)
 end

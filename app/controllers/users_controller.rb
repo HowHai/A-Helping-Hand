@@ -35,12 +35,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         format.html {
-          flash[:success] = "Welcome to Helping Hand, #{@user.name}!"
           session[:user_id] = @user.id
           redirect_to root_path
         }
         format.js {
-          flash[:success] = "Welcome to Helping Hand, #{@user.name}!"
           session[:user_id] = @user.id
           redirect_to root_path
                   }
