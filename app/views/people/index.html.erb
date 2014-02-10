@@ -23,7 +23,6 @@
 
 <div class="col-md-12 col-lg-12 col-sm-12" id="profiles-panel">
   <!-- Add a person to application -->
-    <!-- <%= link_to 'Help a person', new_person_path %> -->
 
   <!-- search box here -->
   <form class="navbar-form">
@@ -34,24 +33,13 @@
   </form>
 
   <!-- Profiles -->
-  <!--  -->
-<!--   <div class="row col-md-12" id="profiles">
-    <div class="col-sm-2 col-md-2 col-lg-2"></div>
-    <div class="profile col-md-2 col-sm-2 col-lg-2"><p>Profile 1</p></div>
-    <div class="profile col-md-2 col-sm-2 col-lg-2"><p>Profile 1</p></div>
-    <div class="profile col-md-2 col-sm-2 col-lg-2"><p>Profile 1</p></div>
-    <div class="profile col-md-2 col-sm-2 col-lg-2"><p>Profile 1</p></div>
-    <div class="col-sm-2 col-md-2 col-lg-2"></div>
-  </div>
-
- -->
    <!-- Generate people's profile using data -->
   <% @people.each do |person| %>
     <div class="person-profile col-md-4 col-lg-3 col-sm-6 col-xs-12">
-      <%= image_tag("homeless-dan.png", class: "profile-img") %>
+      <%= image_tag(person.photo_url, class: "profile-img") %>
       <div class="person-name-tag">
-        <%= person.name %> <br>
-        <%= person.location + ", CA" %>
+        <%= person.name %> <br> <br> <br>
+        <%= person.location %>
       </div>
     </div>
   <% end %>
@@ -64,5 +52,9 @@
     // });
     $("#form-stuff").load("users/new #awesome-form");
   });
+
+  $("#user-info-tab").click(function() {
+    $(".user-inner-tab-content").html("Hai");
+  })
 </script>
 

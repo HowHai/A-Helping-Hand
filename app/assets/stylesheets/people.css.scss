@@ -249,7 +249,8 @@ footer {
   border: 6px solid #328194;
   border-radius: 200px;
   background-color: #328194;
-  margin: 25px;
+  margin: 35px;
+  margin-top: 45px;
 
   -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
   -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
@@ -265,9 +266,11 @@ footer {
   .person-name-tag {
     border: 1px solid black;
     text-align: center;
-    background-color: #ff8627;
+    // background-color: #ff8627;
+    background-image: url(cam_flag.gif);
+    background-size: cover;
     color: white;
-    height: 50px;
+    height: 99px;
     margin-top: -5px;
     font-weight: bold;
     font-size: 1.3em;

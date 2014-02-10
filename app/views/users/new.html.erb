@@ -24,3 +24,21 @@
 </div>
 
  -->
+ <style>
+ #testDiv {
+  margin: 250px;
+ }
+ </style>
+
+<div id="testDiv"></div>
+<select name="department_list" id="department_list">
+    <option value="department1">Department 1</option>
+    <option value="department2">Department 2</option>
+</select>
+
+<script>
+  $("#department_list").change(function() {
+    var selectDepart = $(this).val();
+    $("#testDiv").html(selectDepart);
+  })
+</script>

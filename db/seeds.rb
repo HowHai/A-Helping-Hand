@@ -22,9 +22,17 @@ def random_city
   ['Agoura Hills', 'Corona del Mar', 'Joshua Tree', 'Ojai', 'La Verne', 'Lake City', 'Duarte', 'Downey', 'Edwards', 'El Cajon', 'Lake Tahoe', 'Pinole', 'Pomona', 'El Monte', 'Santa Monica', "Los Angeles", "Perris", 'Lakeside', 'Lake Almanor', 'Cutten', 'Danville', 'Del Mar', 'Covina', 'Costa Mesa', 'Cotati', 'Alamo', 'Alturas', 'Anderson'].sample
 end
 
+def random_cambdia_city
+  ['Battambang', 'Kampong Cham', 'Kanpong Chhnang', 'Sihanoukville', 'Kampong Speu', 'Kampong Thorn', 'Kampot', 'Koh Kong', 'Kratie', 'Mongkol Borei', 'Neak Leung', 'Pailin', 'Poipet', 'Prey Veng', 'Siem Reap', 'Sisophon', 'Ta Khmau', 'Takeo', 'Thmar Kol'].sample
+end
+
 def random_email
   %w[Elwanda Roff Trinh Manfredi Matilda Mazon Francisco Wendell Timika Garand Russ Harms Kathe Byron Alma Kott Alexis Westerfield Merilyn Blakeney Jasmin Bruns Ned Leiva Kristie Bartos Rueben Krupa Myung Reddington Regine Ferron Adrianne Gruner Aimee Prendergast Riley Paladino Maisha Farnsworth].sample +
   "@" + %w[gmail.com hotmail.com aol.com netscape.com yahoo.com trustmail.com night.com].sample
+end
+
+def random_photo
+  "danphoto" + (1..2).to_a.sample.to_s + ".jpg"
 end
 
 
@@ -33,5 +41,5 @@ end
 end
 
 12.times do
-  Person.create(name: random_name, age: random_age, location: random_city)
+  Person.create(name: random_name, age: random_age, location: random_cambdia_city, photo_url: random_photo)
 end
