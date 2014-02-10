@@ -1,13 +1,9 @@
 HelpingHand::Application.routes.draw do
 
   resources :users
-  resources :people, only: [:new]
+  resources :people
   resources :auths, only: [:new, :create]
   root 'people#index'
-
-  # Delete after test
-  get "test.html" => "people#test"
-
 
   delete "auths" => "auths#destroy"
   # match '/signup', to: 'users#new', via: 'get'

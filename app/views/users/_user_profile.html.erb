@@ -9,5 +9,22 @@
   </div>
 
   <div class="user-inner-tab">
+    <div class="user-inner-tab-content">
+      <!-- Render info here using ajax -->
+
+      <div id="add-person-form">
+        <%= form_for(@person) do |f| %>
+          <%= render 'shared/error_messages' %>
+
+          <%= f.text_field :name, placeholder: "Name" %>
+          <%= f.text_field :age, placeholder: "Age" %>
+          <%= f.text_field :location, placeholder: "Location" %>
+          <%= f.text_area :description, placeholder: "Description" %>
+          <%= f.submit "Help now!", class: "btn btn-large btn-primary", id: "add-person-now" %>
+        <% end %>
+      </div>
+
+
+    </div>
   </div>
 </div>

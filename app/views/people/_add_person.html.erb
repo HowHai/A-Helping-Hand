@@ -1,0 +1,13 @@
+<div id="add-person-form">
+  <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <%= f.text_field :name, placeholder: "Name" %>
+
+    <%= f.text_field :age, placeholder: "Age" %>
+
+    <%= f.text_field :location, placeholder: "Location" %>
+
+    <%= f.submit "Help now!", class: "btn btn-large btn-primary", id: "add-person-now" %>
+  <% end %>
+</div>
