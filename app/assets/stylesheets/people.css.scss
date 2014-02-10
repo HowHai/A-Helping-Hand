@@ -280,13 +280,18 @@ footer {
 
 #user-tab {
   height: 360px;
-  width: 450px;
+  width: 440px;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   background-color: #505050;
   margin-top: 15px;
   margin-left: -150px;
   opacity: 0.9;
+  border: 2px solid white;
+
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
 
   .user-inner-tab {
     background-color: #505050;
@@ -296,18 +301,21 @@ footer {
   }
 
   .user-top-tab {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
     background-color: #404040;
-    height: 60px;
+    height: 40px;
     width: 100%;
     color: #cccccc;
     text-align: center;
+  }
 
-
-    span {
-      width: 25px;
-      height: 25px;
-      background-color: #505050;
-      border-radius: 23px;
+  ul li {
+    font-weight: bold;
+    a {
+      background: #ff8627;
+      color: white;
+      border: none;
     }
   }
 }
@@ -315,13 +323,11 @@ footer {
 // Dropdown menu for user's profile
 
 .btn-group {
-
   button {
     background: transparent;
     color: white;
     border: none;
   }
-
   ul {
     background: none;
   }

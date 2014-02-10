@@ -1,9 +1,13 @@
 <div id="user-tab">
-  <div class="user-inner-tab">
-  </div>
+
   <div class="user-top-tab">
-    <div class="row">
-      <h2>Welcome <%= current_user.name %></h2>
-    </div>
+    <ul class="nav nav-tabs">
+      <li class="active"><%= link_to "Add new person", '#' %></li>
+      <li><%= link_to "Your info", "#" %></li>
+      <li><%= link_to "Other", "#" %></li>
+    </ul>
+  </div>
+
+  <div class="user-inner-tab">
   </div>
 </div>
