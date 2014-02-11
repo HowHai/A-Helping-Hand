@@ -8,7 +8,7 @@
 
 
 Person.destroy_all
-User.destroy_all
+# User.destroy_all
 
 def random_name
   %w[Elwanda Roff Trinh Manfredi Matilda Mazon Francisco Wendell Timika Garand Russ Harms Kathe Byron Alma Kott Alexis Westerfield Merilyn Blakeney Jasmin Bruns Ned Leiva Kristie Bartos Rueben Krupa Myung Reddington Regine Ferron Adrianne Gruner Aimee Prendergast Riley Paladino Maisha Farnsworth].sample
@@ -36,10 +36,10 @@ def random_photo
 end
 
 
-12.times do
-  User.create(name: random_name, email: random_email, password: "abc123")
-end
+# 12.times do
+#   User.create(name: random_name, email: random_email, password: "abc123")
+# end
 
-12.times do
-  Person.create(name: random_name, age: random_age, location: random_cambdia_city, photo_url: random_photo)
-end
+# 12.times do
+#   Person.create(name: random_name, age: random_age, location: random_cambdia_city, photo_url: random_photo)
+# end

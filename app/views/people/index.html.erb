@@ -1,16 +1,16 @@
 <div class="col-md-12" id="top-panel">
 
   <div class="top-panel-content row">
-    <div class="col-md-6">
+    <div class="col-md-6 col-sm-3">
       <h1>Give a helping hand</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, autem, repellendus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, ipsum, laborum, ut at aliquam error modi fugit minima aliquid adipisci commodi sint voluptates itaque atque veritatis ratione beatae. Repudiandae, molestias!</p>
     </div>
 
-    <div class="col-md-2"></div>
+    <div class="col-md-3"></div>
 
     <!-- Sign up form loaded here on click -->
       <% if current_user %>
-        <div class="col-md-6" id="form-stuff">
+        <div class="col-md-6 col-sm-3" id="form-stuff">
           <%= render partial: 'users/user_profile' %>
         </div>
       <% else %>
@@ -46,17 +46,17 @@
 </div>
 
 <script>
-  $("#sign-up").click(function() {
-    // $.load("users/new #sign-up-form", function(data) {
-      // $("#form-stuff").html(data);
-    // });
-    $("#form-stuff").load("users/new #awesome-form");
-  });
+  // $("#sign-up").click(function() {
+  //   $("#form-stuff").load("users/new #awesome-form");
+  // });
 
   // Switch to user's info tab on click
   $("#user-info-tab").click(function(e) {
-    $(".user-inner-tab-content").html("Hai");
+    // $(".user-inner-tab-content").html("Hai");
+    // $.get("people/new", function(data) {
+    //   $(".user-inner-tab-content").html(data);
+    // })
+  $(".user-inner-tab-content").load("users/new .testSpan");
     e.preventDefault();
-  })
+  });
 </script>
-

@@ -21,11 +21,13 @@ class User
                     uniqueness: { case_sensitive: false}
   validates :password, length: { minimum: 6 }
 
+  before_save :hash_password
+
+
   def authenticated?(pwd)
     self.hashed_password == BCrypt::Engine.hash_secret(pwd, self.salt)
   end
 
-  before_save :hash_password
 
   private
     def hash_password

@@ -10,17 +10,21 @@ class AuthsController < ApplicationController
 
   def create
     user = User.find_by(name: params[:user][:name])
+
     if user.authenticated?(params[:user][:password])
-      respond_to do |format|
-        format.html { session[:user_id] = user.id }
-        format.js {
-          session[:user_id] = user.id
-          flash[:success] = "Hello #{user.name}"
-        }
-      end
-    else
+      # respond_to do |format|
+      #   format.html { session[:user_id] = user.id }
+      #   format.js {
+      #     session[:user_id] = user.id
+      #     flash[:success] = "Hello #{user.name}"
+      #   }
+      session[:user_id] = user.id
       redirect_to root_path
-      flash[:error] = "BAddddd"
+      # end
+    else
+      # redirect_to root_path
+      redirect_to new_auth_path
+      # flash[:error] = "BAddddd"
     end
   end
 
