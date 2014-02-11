@@ -27,25 +27,65 @@
   <!-- Add a person to application -->
 
   <!-- search box here -->
-  <form class="navbar-form">
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="search">
-    </div>
-    <!-- <button type="submit" class="btn btn-default">Submit</button> -->
-  </form>
+
 
   <!-- Profiles -->
    <!-- Generate people's profile using data -->
-  <% @people.each do |person| %>
-    <div class="person-profile col-md-4 col-lg-3 col-sm-6 col-xs-12">
-      <%= image_tag(person.photo_url, class: "profile-img") %>
-      <div class="person-name-tag">
-        <%= person.name %> <br> <br> <br>
-        <%= person.location %>
+
+<!-- This will generate homeless Dans -->
+<!-- Delete after Dan cries -->
+<!--     <% @people.each do |person| %>
+      <div class="person-profile col-md-4 col-lg-3 col-sm-6 col-xs-12">
+        <%= image_tag(person.photo_url, class: "profile-img") %>
+        <div class="person-name-tag">
+          <%= person.name %> <br> <br> <br>
+          <%= person.location %>
+        </div>
+      </div>
+    <% end %>
+ --><!-- Delete after Dan cries ABOVEEEE -->
+
+</div>
+
+<!-- Test area :::: DO NOT PASS ::::: DANGEROUS -->
+
+
+
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+  <div class="flipper">
+    <div class="front">
+      <!-- front content -->
+    <% @people.each do |person| %>
+      <div class="person-profile">
+        <%= image_tag("profile1.png") %>
+      </div>
+
+      <div class="person-profile-content">
+        Name
       </div>
     </div>
-  <% end %>
+    <div class="back">
+      <!-- back content -->
+      Name: <%= person.name %> <br>
+      Age: <%= person.age %> <br>
+      Location: <%= person.location %>
+    </div>
+    <% end %>
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script>
   $("#add-person-tab").click(function(e) {
