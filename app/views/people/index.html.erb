@@ -1,7 +1,7 @@
 <div class="col-md-12" id="top-panel">
 
   <div class="top-panel-content row">
-    <div class="col-md-6 col-sm-3">
+    <div class="col-md-6 col-sm-6">
       <h1>Give a helping hand</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, autem, repellendus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, ipsum, laborum, ut at aliquam error modi fugit minima aliquid adipisci commodi sint voluptates itaque atque veritatis ratione beatae. Repudiandae, molestias!</p>
     </div>
@@ -11,7 +11,7 @@
     <!-- Sign up form loaded here on click -->
       <% if current_user %>
         <!-- Show user's profile / add person -->
-        <div class="col-md-6 col-sm-3" id="form-stuff">
+        <div class="col-md-6 col-sm-6" id="form-stuff">
           <%= render partial: 'users/user_profile' %>
         </div>
       <% else %>
@@ -27,7 +27,11 @@
   <!-- Add a person to application -->
 
   <!-- search box here -->
-
+  <form action="#" id="search_box">
+    <div class="wrapper">
+      <input type="text" id="search" name="search" placeholder="Search" />
+    </div>
+  </form>
 
   <!-- Profiles -->
    <!-- Generate people's profile using data -->
@@ -45,41 +49,45 @@
     <% end %>
  --><!-- Delete after Dan cries ABOVEEEE -->
 
-</div>
 
 <!-- Test area :::: DO NOT PASS ::::: DANGEROUS -->
 
 
 
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-  <div class="flipper">
-    <div class="front">
-      <!-- front content -->
-    <% @people.each do |person| %>
-      <div class="person-profile">
-        <%= image_tag("profile1.png") %>
-      </div>
+<div class="row">
+  <% @people.each do |person| %>
+    <div class="col-md-4 col-lg-3 col-sm-6 col-xs-12">
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+            <!-- front content -->
+            <div class="person-profile">
+              <%= image_tag("profile1.png") %>
+            </div>
 
-      <div class="person-profile-content">
-        <h2><%= person.name %></h2>
-        <i><%= person.location + ", CA" %></i>
+            <div class="person-profile-content">
+              <h2><%= person.name %></h2>
+              <i><%= person.location + ", CA" %></i>
+            </div>
+          </div>
+          <div class="back">
+            <div class="person-profile-header">
+              <%= person.name %>
+            </div>
+            <!-- back content -->
+            <p><%= person.name %> was last seen on *date here* near <%= person.location %>.</p>
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, asperiores eum modi voluptatibus officiis fugiat dolorem. </p>
+
+          </div>
+        </div>
       </div>
     </div>
-    <div class="back">
-      <div class="person-profile-header">
-        <%= person.name %>
-      </div>
-      <!-- back content -->
-      <p><%= person.name %> was last seen on *date here* near <%= person.location %>.</p>
-      <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, asperiores eum modi voluptatibus officiis fugiat dolorem. </p>
-
-    </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>
 
 
 
+</div>
 
 
 
