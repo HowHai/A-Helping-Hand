@@ -62,14 +62,17 @@
 
       <div class="person-profile-content">
         <h2><%= person.name %></h2>
-        <p><%= person.location %></p>
+        <i><%= person.location + ", CA" %></i>
       </div>
     </div>
     <div class="back">
+      <div class="person-profile-header">
+        <%= person.name %>
+      </div>
       <!-- back content -->
-      Name: <%= person.name %> <br>
-      Age: <%= person.age %> <br>
-      Location: <%= person.location %>
+      <p><%= person.name %> was last seen on *date here* near <%= person.location %>.</p>
+      <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, asperiores eum modi voluptatibus officiis fugiat dolorem. </p>
+
     </div>
     <% end %>
   </div>
