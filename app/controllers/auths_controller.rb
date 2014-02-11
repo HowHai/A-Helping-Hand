@@ -9,9 +9,9 @@ class AuthsController < ApplicationController
   end
 
   def create
-    user = User.find_by(name: params[:user][:name])
+    user = User.where(name: params[:user][:name])
 
-    if user.authenticated?(params[:user][:password])
+    if !user.empty? && user.authenticated?(params[:user][:password])
       # respond_to do |format|
       #   format.html { session[:user_id] = user.id }
       #   format.js {
@@ -22,9 +22,7 @@ class AuthsController < ApplicationController
       redirect_to root_path
       # end
     else
-      # redirect_to root_path
       redirect_to new_auth_path
-      # flash[:error] = "BAddddd"
     end
   end
 
