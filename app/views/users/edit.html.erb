@@ -1,9 +1,13 @@
 <div id="edit-user-profile">
   <%= form_for(@user) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= render 'shared/error_messages' %>
 
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :name, placeholder: "Name" %>
+
+    <%= f.password_field :password, placeholder: "Password" %>
+
+    <%= f.text_field :email, placeholder: "Email" %>
+
+    <%= f.submit "Update setting", class: "btn btn-large btn-primary", id: "newClicker" %>
   <% end %>
 </div>
