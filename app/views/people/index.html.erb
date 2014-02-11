@@ -10,10 +10,12 @@
 
     <!-- Sign up form loaded here on click -->
       <% if current_user %>
+        <!-- Show user's profile / add person -->
         <div class="col-md-6 col-sm-3" id="form-stuff">
           <%= render partial: 'users/user_profile' %>
         </div>
       <% else %>
+        <!-- Show sign up form -->
         <div class="col-md-4" id="form-stuff">
           <%= render partial: 'users/awesome_form' %>
         </div>
@@ -46,17 +48,14 @@
 </div>
 
 <script>
-  // $("#sign-up").click(function() {
-  //   $("#form-stuff").load("users/new #awesome-form");
-  // });
+  $("#add-person-tab").click(function(e) {
+    $(".user-inner-tab-content").load("/ #add-person-form");
+  })
 
   // Switch to user's info tab on click
   $("#user-info-tab").click(function(e) {
-    // $(".user-inner-tab-content").html("Hai");
-    // $.get("people/new", function(data) {
-    //   $(".user-inner-tab-content").html(data);
-    // })
-  $(".user-inner-tab-content").load("users/new .testSpan");
-    e.preventDefault();
-  });
+    // .user-info-tab currently in users/new... find out how to render partial
+    $(".user-inner-tab-content").load("users/new .user-info-tab");
+      e.preventDefault();
+    });
 </script>
