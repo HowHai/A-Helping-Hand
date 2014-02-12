@@ -42,6 +42,11 @@
 
     <div id="testAjax">Test</div>
 
+    <%= form_tag people_path, method: 'get', id: 'products_search' do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag 'Search', :name => nil %>
+    <% end %>
+
 
     <!-- Profiles -->
      <!-- Generate people's profile using data -->
@@ -61,7 +66,7 @@
 
   <!-- Test area :::: DO NOT PASS ::::: DANGEROUS -->
 
-    <div class="row">
+    <div class="row" id="putDataHere">
     <!-- Start people display -->
       <% @people.each do |person| %>
         <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
@@ -103,14 +108,18 @@
 
 <script>
   // Search profiles on keyup
-  $("#search").keyup(function() {
-    // $("#sendForm")[0].href = $("#sendForm")[0].href + "?search=" + $("#search").val();
-    $.get("people.json", $(this).serialize(), function(resp) {
-      $("#testAjax").text(resp[0].name)
-      console.log(resp);
-    });
-  });
+  // $("#search").keyup(function() {
+  //   // $("#sendForm")[0].href = $("#sendForm")[0].href + "?search=" + $("#search").val();
+  //   $.get("people", { search: "Timika" }, function(resp) {
+  //     console.log(resp);
+  //   });
 
+  // });
+
+  $("#products_search").submit(function() {
+    $.get(this.action, $(this).serialize(), null, 'script');
+    return false;
+  })
 
 
 

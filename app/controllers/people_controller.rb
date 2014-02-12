@@ -13,7 +13,10 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       format.html {}
-      format.json { render json: @people }
+      format.js
+      format.json {
+        render json: @people
+      }
     end
   end
 
