@@ -11,7 +11,7 @@ class AuthsController < ApplicationController
   def create
     user = User.find_by(name: params[:user][:name])
 
-    if !user.nil? && user.authenticated?(params[:user][:password])
+    if user && user.authenticated?(params[:user][:password])
       # respond_to do |format|
       #   format.html { session[:user_id] = user.id }
       #   format.js {

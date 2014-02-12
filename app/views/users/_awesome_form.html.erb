@@ -15,10 +15,13 @@
   </div>
   <div class="awesome-bottom-form">
     <div class="row">
-      <div class="col-md-5">
-         <span class="glyphicon glyphicon-user"></span> Sign in
+      <div class="col-md-4">
+         <span class="glyphicon glyphicon-user"></span>
+          <%= link_to "Sign in", '#', class: "signin" %>
         </div>
-      <div class="col-md-7"><span class="glyphicon glyphicon-lock"></span> Forgot password?</div>
+      <div class="col-md-8"><span class="glyphicon glyphicon-lock"></span>
+        <%= link_to "Lost password", '#' %>
+      </div>
     </div>
   </div>
 </div>

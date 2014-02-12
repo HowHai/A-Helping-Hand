@@ -1,5 +1,12 @@
 <div class="col-md-12" id="top-panel">
 
+      <div class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+        </div>
+      </div>
+    </div>
+
   <div class="top-panel-content row">
     <div class="col-md-6 col-sm-6 col-lg-6">
       <h1>Give a helping hand</h1>
@@ -85,7 +92,6 @@
 </div>
 
 
-
 <script>
   $("#add-person-tab").click(function(e) {
     $(".user-inner-tab-content").load("/ #add-person-form");
@@ -97,6 +103,11 @@
     $(".user-inner-tab-content").load("users/new .user-info-tab");
       e.preventDefault();
     });
+
+  $(".signin").click(function() {
+    $(".modal").modal('toggle');
+    $(".modal-content").load("auths/new #user-login")
+  });
 </script>
 
 

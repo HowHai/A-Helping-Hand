@@ -6,3 +6,12 @@
     <%= render partial: 'form' %>
   </div>
 </div>
+
+<div id="user-login">
+  <%= form_for(@user, {url: 'auths', method: 'post'}) do |f| %>
+    <%= render 'shared/error_messages' %>
+    <%= f.text_field :name, placeholder: "Name" %>
+    <%= f.password_field :password, placeholder: "Password" %>
+    <%= f.submit "Sign in", class: "btn btn-large btn-primary", id: "newClicker" %>
+  <% end %>
+</div>
