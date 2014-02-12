@@ -12,7 +12,7 @@ $grayMediumLight: #eaeaea;
 // universal
 
 html {
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 body {
@@ -117,6 +117,9 @@ p {
     li a {
       color: white;
       font-weight: bold;
+    }
+    li {
+      display: inline-block;
     }
   }
   #logo {
