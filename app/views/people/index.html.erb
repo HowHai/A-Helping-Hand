@@ -39,6 +39,7 @@
       <!-- <%= link_to "Click", root_path, id: "sendForm" %> -->
     </form>
 
+
     <!-- Profiles -->
      <!-- Generate people's profile using data -->
 
@@ -92,10 +93,11 @@
 
 
 <script>
-  // $("#sendForm").click(function() {
-  //   // alert($("#search").val())
-  //   $("#sendForm")[0].href = $("#sendForm")[0].href + "?param1=" + $("#search").val();
-  // })
+  $("#search").keyup(function() {
+    // $("#sendForm")[0].href = $("#sendForm")[0].href + "?param1=" + $("#search").val();
+    $.get("/?search=" + $("#search").val(), function(data) {
+    })
+  })
 
 
 
