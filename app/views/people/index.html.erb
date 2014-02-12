@@ -38,7 +38,11 @@
       <div class="wrapper">
         <input type="text" id="search" name="search" placeholder="Search" />
       </div>
+      <!-- <%= link_to "Click", root_path, id: "sendForm" %> -->
     </form>
+
+
+
 
     <!-- Profiles -->
      <!-- Generate people's profile using data -->
@@ -93,6 +97,17 @@
 
 
 <script>
+  // $("#sendForm").click(function() {
+  //   // alert($("#search").val())
+  //   $("#sendForm")[0].href = $("#sendForm")[0].href + "?param1=" + $("#search").val();
+  // })
+
+
+
+
+
+
+
   $("#add-person-tab").click(function(e) {
     $(".user-inner-tab-content").load("/ #add-person-form");
   })

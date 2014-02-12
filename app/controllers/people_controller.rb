@@ -1,8 +1,15 @@
 class PeopleController < ApplicationController
   def index
     @user = User.new
-    @people = Person.all
+    # @people = Person.all
     @person = Person.new
+
+    # Person search form
+    if params[:search]
+      @people = Person.where(name: params[:search])
+    else
+      @people = Person.all
+    end
   end
 
   def new
