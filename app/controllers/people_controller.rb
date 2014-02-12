@@ -10,6 +10,11 @@ class PeopleController < ApplicationController
     else
       @people = Person.all
     end
+
+    respond_to do |format|
+      format.html {}
+      format.json { render json: @people }
+    end
   end
 
   def new

@@ -34,10 +34,13 @@
     <!-- Add a person to application -->
 
     <!-- search box here -->
-    <form action="#" id="search_box">
+    <form action="people" method="get" id="search_box">
         <input type="text" id="search" name="search" placeholder="search name..." />
-      <!-- <%= link_to "Click", root_path, id: "sendForm" %> -->
+<!--         <%= link_to "Click", root_path, id: "sendForm" %>
+ -->
     </form>
+
+    <div id="testAjax">Test</div>
 
 
     <!-- Profiles -->
@@ -100,11 +103,13 @@
 
 <script>
   // Search profiles on keyup
-  // $("#search").keyup(function() {
-    // $("#sendForm")[0].href = $("#sendForm")[0].href + "?param1=" + $("#search").val();
-    // $.get("/?search=" + $("#search").val(), function(data) {
-    // })
-  // })
+  $("#search").keyup(function() {
+    // $("#sendForm")[0].href = $("#sendForm")[0].href + "?search=" + $("#search").val();
+    $.get("people.json", $(this).serialize(), function(resp) {
+      $("#testAjax").text(resp[0].name)
+      console.log(resp);
+    });
+  });
 
 
 

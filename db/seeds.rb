@@ -34,7 +34,7 @@ end
 
 def random_photo
   # "danphoto" + (1..2).to_a.sample.to_s + ".jpg"
-  "profile" + (1..4).to_a.sample.to_s + ".jpg"
+  "profile" + (1..13).to_a.sample.to_s + ".jpg"
 end
 
 def get_random_user

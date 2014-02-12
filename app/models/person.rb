@@ -20,7 +20,7 @@ class Person
   has_mongoid_attached_file :image,
   :styles => {
     :thumb => "100x100#",   # Centrally cropped
-    :small  => "150x150>",  # Only squish if it's larger than this
+    :small  => "200x200>",  # Only squish if it's larger than this
     :elongate => "20x500"
   }
 
