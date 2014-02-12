@@ -1,6 +1,6 @@
 <ul id="users">
   <% @users.each do |user| %>
-    <li><%= user.name %></li>
+    <li><%= link_to user.name, user %></li>
   <% end %>
 </ul>
 
@@ -38,8 +38,9 @@
 </div>
 
 <script>
+$("#users").click(function() {
+  var testV = window.location.href;
+  alert(testV);
+})
 
-  $(".delete_user").bind("ajax:success", function() {
-    $(this).closest('div').fadeOut();
-  });
 </script>
