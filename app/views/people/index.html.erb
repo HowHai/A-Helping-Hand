@@ -79,7 +79,13 @@
                   <%= person.name %>
                 </div>
                 <!-- back content -->
-                <p><%= person.name %> was last seen on *date here* near <%= person.location %> by <%= person.user.name %>.</p>
+                <!-- Delete after test -->
+                <% if person.image %>
+                  <%= image_tag person.image %>
+                <% end %>
+                <!-- Delete above after test -->
+
+                <p><%= person.name %> last seen on *date here* near <%= person.location %> by <%= person.user.name %>.</p>
                 <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, asperiores eum modi voluptatibus officiis fugiat dolorem. </p>
 
               </div>
@@ -92,12 +98,15 @@
 </div>
 
 
+
+
 <script>
-  $("#search").keyup(function() {
+  // Search profiles on keyup
+  // $("#search").keyup(function() {
     // $("#sendForm")[0].href = $("#sendForm")[0].href + "?param1=" + $("#search").val();
-    $.get("/?search=" + $("#search").val(), function(data) {
-    })
-  })
+    // $.get("/?search=" + $("#search").val(), function(data) {
+    // })
+  // })
 
 
 
