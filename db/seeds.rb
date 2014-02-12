@@ -33,7 +33,8 @@ def random_email
 end
 
 def random_photo
-  "danphoto" + (1..2).to_a.sample.to_s + ".jpg"
+  # "danphoto" + (1..2).to_a.sample.to_s + ".jpg"
+  "profile" + (1..4).to_a.sample.to_s + ".jpg"
 end
 
 def get_random_user
@@ -45,5 +46,5 @@ end
 end
 
 12.times do
-  Person.create(name: random_name, age: random_age, location: random_cambdia_city, photo_url: random_photo, user_id: get_random_user)
+  Person.create(name: random_name, age: random_age, location: random_city, photo_url: random_photo, user_id: get_random_user)
 end

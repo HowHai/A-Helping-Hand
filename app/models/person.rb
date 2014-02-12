@@ -17,7 +17,12 @@ class Person
   field :location, type: String
   field :description, type: String
   field :photo_url, type: String
-  has_mongoid_attached_file :image
+  has_mongoid_attached_file :image,
+  :styles => {
+    :thumb => "100x100#",   # Centrally cropped
+    :small  => "150x150>",  # Only squish if it's larger than this
+    :elongate => "20x500"
+  }
 
   # Relation to User model
   belongs_to :user

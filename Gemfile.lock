@@ -43,6 +43,10 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
+    aws-sdk (1.34.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     bootstrap-sass (3.1.0.0)
       sass (~> 3.2)
     bson (2.2.0)
@@ -74,6 +78,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile (0.5.2)
     minitest (4.7.5)
     mongoid-paperclip (0.0.8)
       paperclip (>= 2.3.6)
@@ -82,6 +87,8 @@ GEM
       connection_pool (~> 1.2)
       optionable (~> 0.2.0)
     multi_json (1.8.4)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
     optionable (0.2.0)
     origin (2.1.0)
     paperclip (4.1.0)
@@ -139,11 +146,13 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uuidtools (2.1.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk
   bcrypt-ruby!
   bootstrap-sass (= 3.1.0)
   coffee-rails (~> 4.0.0)

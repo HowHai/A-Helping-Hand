@@ -59,6 +59,7 @@
   <!-- Test area :::: DO NOT PASS ::::: DANGEROUS -->
 
     <div class="row">
+    <!-- Start people display -->
       <% @people.each do |person| %>
         <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
           <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
@@ -66,7 +67,8 @@
               <div class="front">
                 <!-- front content -->
                 <div class="person-profile">
-                  <%= image_tag("profile1.png") %>
+                  <!-- <%= person.image_file_size ? image_tag(person.image.url(:thumb)) : image_tag("profile1.png") %> -->
+                  <%= image_tag(person.photo_url) %>
                 </div>
 
                 <div class="person-profile-content">
@@ -79,11 +81,6 @@
                   <%= person.name %>
                 </div>
                 <!-- back content -->
-                <!-- Delete after test -->
-                <% if person.image %>
-                  <%= image_tag person.image %>
-                <% end %>
-                <!-- Delete above after test -->
 
                 <p><%= person.name %> last seen on *date here* near <%= person.location %> by <%= person.user.name %>.</p>
                 <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, asperiores eum modi voluptatibus officiis fugiat dolorem. </p>
@@ -92,6 +89,7 @@
             </div>
           </div>
         </div>
+        <!-- End of people display -->
       <% end %>
     </div>
   </div>
