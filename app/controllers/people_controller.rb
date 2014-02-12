@@ -6,7 +6,7 @@ class PeopleController < ApplicationController
 
     # Person search form
     if params[:search]
-      @people = Person.where(name: params[:search])
+      @people = Person.where(name: params[:search].capitalize)
     else
       @people = Person.all
     end
