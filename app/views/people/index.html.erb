@@ -34,14 +34,6 @@
     <!-- Add a person to application -->
 
     <!-- search box here -->
-    <form action="people" method="get" id="search_box">
-        <input type="text" id="search" name="search" placeholder="search name..." />
-<!--         <%= link_to "Click", root_path, id: "sendForm" %>
- -->
-    </form>
-
-    <div id="testAjax">Test</div>
-
     <%= form_tag people_path, method: 'get', id: 'products_search' do %>
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag 'Search', :name => nil %>
@@ -107,21 +99,18 @@
 
 
 <script>
-  // Search profiles on keyup
-  // $("#search").keyup(function() {
-  //   // $("#sendForm")[0].href = $("#sendForm")[0].href + "?search=" + $("#search").val();
-  //   $.get("people", { search: "Timika" }, function(resp) {
-  //     console.log(resp);
-  //   });
-
-  // });
-
-  $("#products_search").submit(function() {
+  // Search people
+  $("#products_search input").keyup(function() {
     $.get(this.action, $(this).serialize(), null, 'script');
+    console.log($(this).serialize());
     return false;
   })
 
-
+  // $("#products_search input").keyup(function() {
+  //   $.get($("#products_search").attr('action'), &crarr;
+  //     $("#products_search").serialize(), null, 'script');
+  //   return false;
+  // });
 
 
 

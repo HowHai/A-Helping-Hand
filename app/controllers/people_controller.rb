@@ -6,7 +6,8 @@ class PeopleController < ApplicationController
 
     # Person search form
     if params[:search]
-      @people = Person.where(name: params[:search].capitalize)
+      # @people = Person.any_in(name: params[:search].capitalize)
+      @people = Person.where(name: /^#{Regexp.escape(params[:search])}/i)
     else
       @people = Person.all
     end
