@@ -7,8 +7,7 @@
               <div class="front">
                 <!-- front content -->
                 <div class="person-profile">
-                  <!-- <%= person.image_file_size ? image_tag(person.image.url(:thumb)) : image_tag("profile1.png") %> -->
-                  <%= image_tag(person.photo_url) %>
+                  <%= person.image_file_size ? image_tag(person.image.url(:thumb)) : image_tag(person.photo_url) %>
                 </div>
 
                 <div class="person-profile-content">
