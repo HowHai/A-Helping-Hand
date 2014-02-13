@@ -43,7 +43,6 @@
   // Search people
   $("#search_box input").keyup(function() {
     $.get(this.action, $(this).serialize(), null, 'script');
-    console.log($(this).serialize());
     return false;
   })
 
