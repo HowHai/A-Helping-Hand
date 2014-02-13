@@ -1,4 +1,6 @@
 class PeopleController < ApplicationController
+  require 'will_paginate/array'
+
   def index
     @user = User.new
     # @people = Person.all
@@ -9,7 +11,7 @@ class PeopleController < ApplicationController
       # Partial match query
       @people = Person.where(name: /^#{Regexp.escape(params[:search])}/i)
     else
-      @people = Person.all
+      @people = Person.all.paginate(page: params[:page], per_page: 8)
     end
 
     respond_to do |format|

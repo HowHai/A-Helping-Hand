@@ -36,12 +36,12 @@
   </div>
 </div>
 
-
+<%= will_paginate @people %>
 
 
 <script>
   // Search people
-  $("#search_box input").keyup(function() {
+  $("#search").keyup(function() {
     $.get(this.action, $(this).serialize(), null, 'script');
     return false;
   })
