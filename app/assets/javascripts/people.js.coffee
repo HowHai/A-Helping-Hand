@@ -6,7 +6,7 @@ jQuery ->
   if $('.pagination').length
     $(window).scroll ->
       url = $('.pagination .next_page').attr('href')
-      if url && $(window).scrollTop() > $(document).height() - $(window).height() - 80
+      if url && $(window).scrollTop() > $(document).height() - $(window).height() - 70
         $('.pagination').text("Fetching more profiles...")
         $.getScript(url)
     $(window).scroll()
