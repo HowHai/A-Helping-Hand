@@ -1,1 +1,15 @@
-$("#people-search-section").html('<%= j render partial: "people_search_section" %>');
+// People search
+<% if params[:search] %>
+  $("#people-search-section").html('<%= j render partial: "people_search_section" %>');
+<% end %>
+
+// Endless scroll pagination
+<% if params[:page] %>
+  $("#people-search-section").append('<%= j render partial: "people_search_section" %>');
+  <% if @people.next_page %>
+    $('.pagination').replaceWith('<%= j will_paginate(@people) %>')
+  <% else %>
+    $('.pagination').remove();
+  <% end %>
+  <% sleep 2 %>
+<% end %>
