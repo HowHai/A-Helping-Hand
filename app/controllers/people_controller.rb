@@ -6,7 +6,7 @@ class PeopleController < ApplicationController
 
     # Person search form
     if params[:search]
-      # @people = Person.any_in(name: params[:search].capitalize)
+      # Partial match query
       @people = Person.where(name: /^#{Regexp.escape(params[:search])}/i)
     else
       @people = Person.all
@@ -15,9 +15,7 @@ class PeopleController < ApplicationController
     respond_to do |format|
       format.html {}
       format.js
-      format.json {
-        render json: @people
-      }
+      format.json { render json: @people }
     end
   end
 

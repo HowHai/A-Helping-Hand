@@ -1,12 +1,4 @@
 <div class="col-md-12" id="top-panel">
-
-      <div class="modal fade bs-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-        </div>
-      </div>
-    </div>
-
   <div class="top-panel-content row">
     <div class="col-md-6 col-sm-6 col-lg-6">
       <h1>Give a helping hand</h1>
@@ -34,63 +26,13 @@
     <!-- Add a person to application -->
 
     <!-- search box here -->
-    <%= form_tag people_path, method: 'get', id: 'products_search' do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+    <%= form_tag people_path, method: 'get', id: 'search_box' do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search by name" %>
     <% end %>
 
+    <!-- People search section -->
+    <%= render partial: 'people_search_section' %>
 
-    <!-- Profiles -->
-     <!-- Generate people's profile using data -->
-
-  <!-- This will generate homeless Dans -->
-  <!-- Delete after Dan cries -->
-  <!--     <% @people.each do |person| %>
-        <div class="person-profile col-md-4 col-lg-3 col-sm-6 col-xs-12">
-          <%= image_tag(person.photo_url, class: "profile-img") %>
-          <div class="person-name-tag">
-            <%= person.name %> <br> <br> <br>
-            <%= person.location %>
-          </div>
-        </div>
-      <% end %>
-   --><!-- Delete after Dan cries ABOVEEEE -->
-
-  <!-- Test area :::: DO NOT PASS ::::: DANGEROUS -->
-
-    <div class="row" id="putDataHere">
-    <!-- Start people display -->
-      <% @people.each do |person| %>
-        <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12">
-          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-            <div class="flipper">
-              <div class="front">
-                <!-- front content -->
-                <div class="person-profile">
-                  <!-- <%= person.image_file_size ? image_tag(person.image.url(:thumb)) : image_tag("profile1.png") %> -->
-                  <%= image_tag(person.photo_url) %>
-                </div>
-
-                <div class="person-profile-content">
-                  <h2><%= person.name %></h2>
-                  <i><%= person.location %></i>
-                </div>
-              </div>
-              <div class="back">
-                <div class="person-profile-header">
-                  <%= person.name %>
-                </div>
-                <!-- back content -->
-
-                <p><%= person.name %> last seen on *date here* near <%= person.location %> by <%= person.user.name %>.</p>
-                <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, asperiores eum modi voluptatibus officiis fugiat dolorem. </p>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End of people display -->
-      <% end %>
-    </div>
   </div>
 </div>
 
@@ -99,20 +41,11 @@
 
 <script>
   // Search people
-  $("#products_search input").keyup(function() {
+  $("#search_box input").keyup(function() {
     $.get(this.action, $(this).serialize(), null, 'script');
     console.log($(this).serialize());
     return false;
   })
-
-  // $("#products_search input").keyup(function() {
-  //   $.get($("#products_search").attr('action'), &crarr;
-  //     $("#products_search").serialize(), null, 'script');
-  //   return false;
-  // });
-
-
-
 
   $("#add-person-tab").click(function(e) {
     $(".user-inner-tab-content").load("/ #add-person-form");
