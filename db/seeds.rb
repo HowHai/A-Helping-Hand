@@ -45,6 +45,6 @@ end
   User.create(name: random_name, email: random_email, password: "abc123")
 end
 
-12.times do
+22.times do
   Person.create(name: random_name, age: random_age, location: random_city, photo_url: random_photo, user_id: get_random_user)
 end
