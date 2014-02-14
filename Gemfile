@@ -6,9 +6,14 @@ gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bootstrap-sass', '3.1.0'
 # gem 'bcrypt-ruby', '3.1.2'
 gem 'bcrypt-ruby', github: 'codahale/bcrypt-ruby'
-gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
+# gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
+gem 'mongoid-paperclip-google', github: 'danieljacobarcher/mongoid-paperclip', require: "mongoid_paperclip"
 gem 'aws-sdk'
 gem 'will_paginate', '~> 3.0'
+gem 'paperclip', "3.5.2"
+gem 'fog'
+gem 'figaro'
+gem 'bson_ext'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
