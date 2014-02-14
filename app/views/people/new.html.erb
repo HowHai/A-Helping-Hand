@@ -1,0 +1,64 @@
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc0V0uGRZgDx_c0EHWJ1basiPTNcIyZKc&sensor=true">
+    </script>
+
+
+
+
+
+<div id="map-canvas" style="width: 50%; height: 50%; margin: 80px auto;"></div>
+
+<center><div id="testLocation">Get Location</div></center>
+
+
+
+<script type="text/javascript">
+  google.maps.event.addDomListener(window, 'load', initialize);
+  var initialLocation;
+  var browserSupportFlag =  new Boolean();
+
+  function initialize() {
+    var myOptions = {
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+
+    // Try W3C Geolocation (Preferred)
+    if(navigator.geolocation) {
+      browserSupportFlag = true;
+      navigator.geolocation.getCurrentPosition(function(position) {
+        initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+        map.setCenter(initialLocation);
+        console.log(initialLocation.d);
+        $("#testLocation").click(function() {
+          $("#testLocation").html(initialLocation.d + ", " + initialLocation.e)
+        })
+      }, function() {
+        handleNoGeolocation(browserSupportFlag);
+      });
+    }
+    // Browser doesn't support Geolocation
+    else {
+      browserSupportFlag = false;
+      handleNoGeolocation(browserSupportFlag);
+    }
+
+  function handleNoGeolocation(errorFlag) {
+      if (errorFlag == true) {
+        alert("Geolocation service failed.");
+        initialLocation = newyork;
+      } else {
+        alert("Your browser doesn't support geolocation. We've placed you in Siberia.");
+        initialLocation = siberia;
+      }
+      map.setCenter(initialLocation);
+    }
+  }
+
+</script>
