@@ -17,8 +17,7 @@ html {
 
 body {
   width: 100%;
-  padding-top: 50px;
-  margin: 0 auto;
+  padding-top: 60px;
 }
 
 
@@ -308,6 +307,17 @@ footer {
       padding-bottom: 10px;
     }
 
+    #person_location {
+      width: 65%;
+      margin-right: 45px;
+    }
+
+    #get-location-link {
+      width: 30px;
+      height: 30px;
+      background: red;
+    }
+
   ul li {
     font-weight: bold;
     a {
@@ -426,7 +436,7 @@ footer {
 
 
      h2 {
-      margin-top: 45px;
+      margin-top: 38px;
      }
 
   }
@@ -456,7 +466,7 @@ footer {
   p {
     margin: 15px 10px 0 10px;
     font-size: 0.8em;
-    color: #6d7796;
+    color: white;
   }
 
   -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
@@ -493,7 +503,8 @@ footer {
 
 #getPersonLocation {
   width: 100px;
-  height: 25px;
+  height: 35px;
   background: blue;
-  margin: 0 auto;
+  margin: 5px auto;
+  cursor: pointer;
 }
