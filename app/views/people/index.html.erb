@@ -91,7 +91,7 @@
         // map.setCenter(initialLocation);
         console.log(initialLocation.d);
         $("#getPersonLocation").click(function() {
-          $("#person_location").val(initialLocation.d + ", " + initialLocation.e);
+          $("#person_location").val(initialLocation.d + " " + initialLocation.e);
         });
       }, function() {
         handleNoGeolocation(browserSupportFlag);

@@ -28,6 +28,8 @@ class PeopleController < ApplicationController
   def create
     @person = Person.new(person_params)
     if @person.save && @person.update(user_id: current_user.id)
+      address = @person.location.split(' ').map(&:to_f)
+      @person.update(location: Geocoder.address(address))
       # Do some ajax stuff to "Add new person" tab?
       redirect_to root_path
     else
