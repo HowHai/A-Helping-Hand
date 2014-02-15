@@ -23,6 +23,16 @@ def random_city
   ['Agoura Hills', 'Corona del Mar', 'Joshua Tree', 'Ojai', 'La Verne', 'Lake City', 'Duarte', 'Downey', 'Edwards', 'El Cajon', 'Lake Tahoe', 'Pinole', 'Pomona', 'El Monte', 'Santa Monica', "Los Angeles", "Perris", 'Lakeside', 'Lake Almanor', 'Cutten', 'Danville', 'Del Mar', 'Covina', 'Costa Mesa', 'Cotati', 'Alamo', 'Alturas', 'Anderson'].sample
 end
 
+def random_google_coordinates
+  addy = nil
+  while addy == nil
+    first_coord = 23.767368 - (1..20).to_a.sample
+    second_coord = 80.18930 - (1..60).to_a.sample
+    addy = Geocoder.address([first_coord, second_coord])
+  end
+  addy
+end
+
 def random_cambdia_city
   ['Battambang', 'Kampong Cham', 'Kanpong Chhnang', 'Sihanoukville', 'Kampong Speu', 'Kampong Thorn', 'Kampot', 'Koh Kong', 'Kratie', 'Mongkol Borei', 'Neak Leung', 'Pailin', 'Poipet', 'Prey Veng', 'Siem Reap', 'Sisophon', 'Ta Khmau', 'Takeo', 'Thmar Kol'].sample
 end
@@ -46,5 +56,5 @@ end
 end
 
 32.times do
-  Person.create(name: random_name, age: random_age, location: random_city, photo_url: random_photo, user_id: get_random_user)
+  Person.create(name: random_name, age: random_age, location: random_google_coordinates, photo_url: random_photo, user_id: get_random_user)
 end
