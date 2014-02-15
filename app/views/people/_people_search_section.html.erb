@@ -19,9 +19,10 @@
                 <div class="person-profile-header">
                   <%= person.name %>
                 </div>
+                <%= link_to 'Update location/last seen', '#update-location', id: "update-location" %>
                 <!-- back content -->
 
-                <p><%= person.name %> last seen on *date here* near <%= person.location %> by <%= person.user.name %>.</p>
+                <p><%= person.name %> last seen <%= person.created_at.to_formatted_s(:long) %> near <%= person.location %> by <%= person.user.name %>.</p>
                 <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, asperiores eum modi voluptatibus officiis fugiat dolorem. </p>
 
               </div>

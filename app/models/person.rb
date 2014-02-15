@@ -1,6 +1,7 @@
 class Person
   include Mongoid::Document
   include Mongoid::Paperclip
+  include Mongoid::Timestamps
 
   # Need for paperclip
   def self.after_commit(*args, &block)
@@ -17,6 +18,7 @@ class Person
   field :location, type: String
   field :description, type: String
   field :photo_url, type: String
+  field :created_at, type: Date, default: Time.now
 
   # has_mongoid_attached_file :image,
   # :styles => {
