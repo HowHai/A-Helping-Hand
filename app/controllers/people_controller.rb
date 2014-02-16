@@ -11,7 +11,7 @@ class PeopleController < ApplicationController
       # Partial match query
       @people = Person.where(name: /^#{Regexp.escape(params[:search])}/i)
     else
-      @people = Person.all.paginate(page: params[:page], per_page: 4)
+      @people = Person.all.paginate(page: params[:page], per_page: 8)
     end
 
     respond_to do |format|
@@ -36,6 +36,17 @@ class PeopleController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def update
+    @person = Person.find(params[:id])
+    @person.update(location: params[:location])
+
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
+  end
+
 
   private
     def person_params

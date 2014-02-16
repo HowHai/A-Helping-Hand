@@ -12,17 +12,17 @@
 
                 <div class="person-profile-content">
                   <h2><%= person.name %></h2>
-                  <i><%= person.location %></i>
+                  <i><span class="<%= person.id %>"> <%= person.location %> </span></i>
                 </div>
               </div>
               <div class="back">
                 <div class="person-profile-header">
                   <%= person.name %>
                 </div>
-                <%= link_to 'Update location/last seen', '#update-location', id: "update-location" %>
+                  <%= link_to "Update location", '#update-location', class: "update-location", data: person_path(person) %>
                 <!-- back content -->
 
-                <p><%= person.name %> last seen <%= person.created_at.to_formatted_s(:long) %> near <%= person.location %> by <%= person.user.name %>.</p>
+                <p><%= person.name %> last seen <%= person.created_at.to_formatted_s(:long) %> near <span class="<%= person.id %>"> <%= person.location %> </span> by <%= person.user.name %>.</p>
                 <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, asperiores eum modi voluptatibus officiis fugiat dolorem. </p>
 
               </div>
