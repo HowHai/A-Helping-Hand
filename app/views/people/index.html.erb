@@ -100,7 +100,8 @@
         console.log(initialLocation.d);
         // Input current location data into location box
         $("#getPersonLocation").click(function() {
-          $("#person_location").val(initialLocation.d + " " + initialLocation.e);
+          $.get("/", { current_location: initialLocation.d + " " + initialLocation.e}, null, 'script');
+          // $("#person_location").val();
         });
 
       }, function() {

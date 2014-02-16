@@ -248,7 +248,7 @@ footer {
 }
 
 #user-tab {
-  height: 360px;
+  height: 378px;
   width: 330px;
   // border-top-left-radius: 25px;
   // border-top-right-radius: 25px;
@@ -293,7 +293,7 @@ footer {
     }
 
     textarea {
-      height: 6em;
+      height: 4em;
     }
 
     #add-person-now {
@@ -309,7 +309,7 @@ footer {
 
     #person_location {
       width: 65%;
-      margin-right: 45px;
+      margin-right: -5px;
     }
 
     #get-location-link {
@@ -503,10 +503,12 @@ footer {
 
 
 #getPersonLocation {
-  width: 100px;
+
+  width: 50px;
   height: 35px;
-  background: blue;
-  margin: 5px auto;
+  background: #7885B2;
+  margin: 3px auto;
+  margin-left: 5px;
   cursor: pointer;
 }
 

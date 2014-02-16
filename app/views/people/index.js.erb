@@ -1,3 +1,8 @@
+// Get current location
+<% if params[:current_location] %>
+  $("#person_location").val('<%= @current_location %>')
+<% end %>
+
 // People search
 <% if params[:search] %>
   $("#people-search-section").html('<%= j render partial: "people_search_section" %>');

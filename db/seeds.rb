@@ -43,8 +43,7 @@ def random_email
 end
 
 def random_photo
-  # "danphoto" + (1..2).to_a.sample.to_s + ".jpg"
-  "profile" + (1..21).to_a.sample.to_s + ".jpg"
+  "profile" + (1..23).to_a.sample.to_s + ".jpg"
 end
 
 def get_random_user
