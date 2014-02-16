@@ -12,7 +12,7 @@
 
                 <div class="person-profile-content">
                   <h2><%= person.name %></h2>
-                  <i><span class="<%= person.id %>"> <%= person.location %> </span></i>
+                  <i><span class="location<%= person.id %>"> <%= person.location %> </span></i>
                 </div>
               </div>
               <div class="back">
@@ -22,7 +22,9 @@
                   <%= link_to "Update location", '#update-location', class: "update-location", data: person_path(person) %>
                 <!-- back content -->
 
-                <p><%= person.name %> last seen <%= person.created_at.to_formatted_s(:long) %> near <span class="<%= person.id %>"> <%= person.location %> </span> by <%= person.user.name %>.</p>
+                <p><%= person.name %> last seen <span class="date<%= person.id %>"><%= person.created_at.to_formatted_s(:long) %></span> near <span class="location<%= person.id %>"> <%= person.location %> </span> by <span class="user<%= person.id %>"><%= person.user.name %></span>
+                </p>
+
                 <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, asperiores eum modi voluptatibus officiis fugiat dolorem. </p>
 
               </div>

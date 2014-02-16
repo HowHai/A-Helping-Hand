@@ -6,6 +6,7 @@ class User
 
   field :name,            type: String
   field :email,           type: String
+  field :location,        type: String
   field :hashed_password, type: String
   field :salt,            type: String
 

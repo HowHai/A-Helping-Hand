@@ -33,6 +33,7 @@
     <!-- search box here -->
     <%= form_tag people_path, method: 'get', id: 'search_box' do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search by name" %>
+      <%= hidden_field_tag :latLon %>
     <% end %>
 
     <!-- People search section -->
@@ -72,7 +73,7 @@
     console.log($(this).attr('data'));
     e.preventDefault();
     // $.post($(this).attr('href'), { updated_at: "09"})
-    $.post($(this).attr('data'), { location: "Haii", _method: "put"}, null, 'script');
+    $.post($(this).attr('data'), { location: initialLocation.d + " " + initialLocation.e, _method: "put"}, null, 'script');
     e.preventDefault();
   })
 
@@ -97,9 +98,11 @@
         initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
         // map.setCenter(initialLocation);
         console.log(initialLocation.d);
+        // Input current location data into location box
         $("#getPersonLocation").click(function() {
           $("#person_location").val(initialLocation.d + " " + initialLocation.e);
         });
+
       }, function() {
         handleNoGeolocation(browserSupportFlag);
       });

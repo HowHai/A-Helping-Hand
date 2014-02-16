@@ -39,7 +39,8 @@ class PeopleController < ApplicationController
 
   def update
     @person = Person.find(params[:id])
-    @person.update(location: params[:location])
+    address = params[:location].split(' ').map(&:to_f)
+    @person.update(location: Geocoder.address(address))
 
     respond_to do |format|
       format.html { redirect_to root_path }

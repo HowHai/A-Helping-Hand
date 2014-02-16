@@ -1,3 +1,4 @@
-$("." + "<%= @person.id %>").html("<%= @person.location %>");
-
+$(".location" + "<%= @person.id %>").html("<%= @person.location %>");
+$(".date" + "<%= @person.id %>").html("<%= @person.updated_at.to_formatted_s(:long) %>");
+$(".user" + "<%= @person.id %>").html("<%= current_user.name %>");
 
