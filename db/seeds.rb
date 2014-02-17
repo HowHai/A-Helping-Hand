@@ -43,7 +43,7 @@ def random_email
 end
 
 def random_photo
-  "profile" + (1..23).to_a.sample.to_s + ".jpg"
+  "profile" + (1..21).to_a.sample.to_s + ".jpg"
 end
 
 def get_random_user
@@ -57,3 +57,10 @@ end
 32.times do
   Person.create(name: random_name, age: random_age, location: random_google_coordinates, photo_url: random_photo, user_id: get_random_user)
 end
+
+# Homeless Dan
+Person.create(name: "Dan", age: 29, location: "1234 K Town", photo_url: "profile22.jpg", user_id: get_random_user)
+
+Person.create(name: "Homeless Dan", age: 29, location: "1234 South K Town", photo_url: "profile23.jpg", user_id: get_random_user)
+
+Person.create(name: "Captain Dan", age: 29, location: "36 Spooner St., North Korea", photo_url: "profile24.jpg", user_id: get_random_user)
