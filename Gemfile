@@ -15,6 +15,8 @@ gem 'fog'
 gem 'figaro'
 gem 'bson_ext'
 
+gem 'rails_12factor'
+
 gem 'geocoder'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
