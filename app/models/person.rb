@@ -48,4 +48,8 @@ class Person
   # Need for paperclip
   # validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   validates_attachment_content_type :image, :content_type => %w(image/jpeg image/jpg image/png)
+
+  # Redefine #to_json
+
+
 end
